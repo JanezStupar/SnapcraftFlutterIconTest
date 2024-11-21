@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Testapp
+Comment=Test app to test stuff
+Exec=testapp
+Icon=${SNAP}/meta/gui/com.example.testapp.png
+Terminal=false
+Type=Application
+Categories=Productivity;
