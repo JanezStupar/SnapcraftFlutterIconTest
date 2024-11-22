@@ -6,21 +6,30 @@ description: Some description
 confinement: strict
 base: core22
 grade: stable
+icon: ./snap/gui/com.example.testapp.png
 
 slots:
   testapp: # adjust accordingly to your app name
     interface: dbus
     bus: session
-    name: com.example.testapp # adjust accordingly to your app name and
+    name: testapp_com.example.testapp # adjust accordingly to your app name and
 
 apps:
   testapp:
     command: testapp
     extensions: [gnome] # gnome includes the libraries required by flutter
     plugs:
-    - network
+      - network
+      - desktop
+      - desktop-legacy
+      - unity7
+      - x11
+      - wayland
     slots:
       - testapp
+    common-id: com.example.testapp # adjust accordingly to your app name
+    desktop: ./snap/gui/com.example.testapp.desktop # adjust accordingly to your app name
+
 parts:
   testapp:
     source: .
