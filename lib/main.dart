@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/systray/tray_manager.dart';
+import 'package:window_manager/window_manager.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await windowManager.ensureInitialized();
+  TestTray tray = TestTray();
+
+  tray.init();
   runApp(const MyApp());
 }
 
